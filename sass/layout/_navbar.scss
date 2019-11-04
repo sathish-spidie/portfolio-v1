@@ -1,0 +1,12 @@
+.navbar__nav {
+  display: none;
+  margin-left: auto;
+
+  @include tablet-up {
+    display: flex;
+  }
+
+  .nav__item {
+    margin: 0 1.25rem;
+  }
+}

@@ -1,0 +1,27 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 0.625rem;
+}
+
+.section {
+  width: 100%;
+  min-width: $min-width;
+  max-width: $max-width;
+  padding: $padding-default;
+  margin: $margin-default auto;
+
+  &__title {
+    margin-bottom: $margin-default;
+    color: $color-primary-dark;
+    font-family: $font-stack-strong;
+    font-size: 1.875rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}

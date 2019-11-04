@@ -1,0 +1,51 @@
+.header {
+  margin: $margin-default 0;
+
+  .hero {
+    @extend .centered;
+
+    width: 80%;
+
+    &__title {
+      margin: 1.25rem 0;
+      font-family: $font-stack-hero;
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    &__subtitle {
+      margin: 1rem 0;
+      font-family: $font-stack-hero;
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+  }
+
+  @include tablet-up {
+    .hero {
+      &__text {
+        font-size: 1.25rem;
+      }
+
+      &__title {
+        font-size: 5.35rem;
+      }
+
+      &__subtitle {
+        font-size: 2.85rem;
+        font-weight: 400;
+      }
+    }
+  }
+
+  @include desktop-up {
+    position: relative;
+
+    .hero {
+      position: absolute;
+      top: 45%;
+      left: 10%;
+      transform: translate(0, -50%);
+    }
+  }
+}

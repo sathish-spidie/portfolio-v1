@@ -1,0 +1,50 @@
+.about {
+  &__body {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap-reverse;
+  }
+
+  &__text {
+    max-width: 31.25rem;
+    margin-top: $margin-default;
+    line-height: 1.875rem;
+
+    p {
+      margin: 0.625rem 0;
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 14.375rem;
+    height: 14.375rem;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 2px 1px rgb(200, 200, 200);
+  }
+
+  &__list {
+    margin: 0.625rem 1.25rem;
+    font-style: italic;
+
+    &__item::before {
+      content: "\00BB";
+      margin-right: 0.3125rem;
+    }
+  }
+
+  @include desktop-up {
+    &__text {
+      float: left;
+      margin-top: 0;
+    }
+
+    &__img {
+      float: right;
+      width: 15.625rem;
+      height: 15.625rem;
+    }
+  }
+}

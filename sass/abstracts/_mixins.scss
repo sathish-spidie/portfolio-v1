@@ -1,0 +1,51 @@
+// Small devices
+@mixin screen--sm {
+  @media (min-width: #{$breakpoint-sm}) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin screen--md {
+  @media (min-width: #{$breakpoint-md}) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin screen--lg {
+  @media (min-width: #{$breakpoint-lg}) {
+    @content;
+  }
+}
+
+// Extra large devices
+@mixin screen--xl {
+  @media (min-width: #{$breakpoint-xl}) {
+    @content;
+  }
+}
+
+@mixin phone-only {
+  @media (max-width: map-get($breakpoints, "phone")) {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @media (min-width: map-get($breakpoints, "tablet")) and (max-width: map-get($breakpoints, "desktop")) {
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  @media (min-width: map-get($breakpoints, "tablet")) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media (min-width: map-get($breakpoints, "desktop")) {
+    @content;
+  }
+}

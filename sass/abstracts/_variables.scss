@@ -1,0 +1,61 @@
+// ---------------
+//      Fonts
+// ---------------
+
+/// @type List
+$font-stack-primary: "Courier New", Courier, monospace;
+
+/// @type List
+$font-stack-strong: "Fjalla One", sans-serif;
+
+/// @type List
+$font-stack-hero: Helvetica, sans-serif;
+
+// ----------------
+//      Colors
+// ----------------
+
+/// @type Color
+$color-primary-light: #fff !default;
+
+/// @type Color
+$color-primary-dark: #272623 !default;
+
+/// @type Color
+$color-blue-emphasized: #3f45cf !default;
+
+/// @type Color
+$color-grey-light: #ebebeb !default;
+
+/// @type Color
+$color-grey-dark: #757473 !default;
+
+// ----------------
+//      Lengths
+// ----------------
+
+/// @type Length
+$max-width: 1180px !default;
+
+/// @type Length
+$min-width: 320px !default;
+
+/// @type Length
+$main-padding: 2rem !default;
+
+/// @type Length
+$padding-default: 2rem !default;
+
+/// @type Length
+$margin-default: 2rem !default;
+
+// -------------------------
+//      Breaking Points
+// -------------------------
+
+$breakpoints: (
+  phone: 450px,
+  tablet: 768px,
+  desktop: 1024px,
+  desktop--xl: 1280px
+) !default;

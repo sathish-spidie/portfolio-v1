@@ -1,0 +1,75 @@
+.portfolio {
+  & > .project {
+    margin: 0 auto;
+  }
+
+  & > .project ~ .project {
+    margin: 1.125rem auto;
+  }
+
+  .project {
+    width: 100%;
+  }
+
+  .project-img {
+    display: none;
+    box-shadow: 0px 0px 2px 0px $color-grey-dark;
+  }
+
+  .project-card {
+    max-width: 31.25rem;
+    font-weight: 300;
+    line-height: 1.55rem;
+
+    &__header {
+      height: 4.375rem;
+    }
+
+    &__footer {
+      height: 4.375rem;
+    }
+
+    &__body {
+      max-height: 14.375rem;
+      padding: 1.25rem;
+      color: $color-primary-light;
+      background: $color-primary-dark;
+    }
+
+    &__tag {
+      font-size: 0.875rem;
+    }
+
+    &__title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    &__skills-list {
+      font-size: 0.875rem;
+    }
+
+    &__skills-list .list-item,
+    &__links-list .list-item {
+      margin: 0.35rem 0 0.35rem 1.55rem;
+    }
+  }
+
+  @include desktop-up {
+    .project {
+      max-width: 56.25rem;
+    }
+
+    .project-img {
+      display: block;
+      width: 37.5rem;
+      height: 21.875rem;
+    }
+
+    .project-card {
+      margin-top: -7.5rem;
+    }
+  }
+}

@@ -1,0 +1,136 @@
+// ---------------------------------
+//      Helpers for Development
+// ---------------------------------
+
+.dev--light-blue {
+  background: lightblue;
+}
+
+.dev--orange {
+  background: orange;
+}
+
+.dev--border {
+  border: 1px dashed red;
+}
+
+.dev--hidden {
+  display: none;
+}
+
+// -----------------
+//      Helpers
+// -----------------
+.h-100 {
+  height: calc(100vh - 2 * #{$padding-default});
+}
+
+.mh-df {
+  max-height: 800;
+}
+
+.flex-col--aligned {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flex-col--aligned-end--evenly {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-evenly;
+}
+
+.flex-col--aligned-start--evenly {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+.flex-col--aligned-end {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.flex-row--aligned {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.flex-row--justified-end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.flex-row--spaced-evenly {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.aligned-right {
+  margin-left: auto;
+}
+
+.aligned-left {
+  margin-right: auto;
+}
+
+.fixed-rt {
+  position: fixed;
+  right: $main-padding;
+}
+
+.fixed-lt {
+  position: fixed;
+  left: $main-padding;
+}
+
+.fixed-bt {
+  position: fixed;
+  bottom: 0;
+}
+
+.text--vertical {
+  align-content: center;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.text-align--right {
+  text-align: right;
+}
+
+.text-align--left {
+  text-align: left;
+}
+
+.text--emphasized {
+  color: $color-blue-emphasized;
+}
+
+/**
+ * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
+ */
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}

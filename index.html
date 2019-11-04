@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="description" content="Software developer portfolio." />
+  <meta name="author" content="Rafael Almeida" />
+  <title>Rafael Almeida | Software Developer</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/main.css" />
+</head>
+
+<body>
+  <nav class="sidebar sidebar--left flex-col--aligned fixed-lt fixed-bt">
+    <a class="icon icon--sm fab fa-github" href="https://github.com/ralmeida094" target="_blank" rel="noreferrer"><span
+        class=" visually-hidden">Github</span></a>
+    <a class="icon icon--sm fab fa-linkedin-in" href="https://www.linkedin.com/in/r-almeida/" target="_blank"
+      rel="noreferrer"><span class=" visually-hidden">Linkedin</span></a>
+    <a class="icon icon--sm fab fa-codepen" href="https://codepen.io/ralmeida094" target="_blank" rel="noreferrer"><span
+        class=" visually-hidden">Codepen</span></a>
+    <a class="icon icon--sm fab fa-hackerrank" href="https://www.hackerrank.com/r_almeida094" target="_blank"
+      rel="noreferrer"><span class=" visually-hidden">Hackerrank</span></a>
+  </nav>
+
+  <nav class="sidebar sidebar--right text--vertical fixed-rt fixed-bt">
+    <a class="flex-col--aligned" href="mailto:mail@rafaeldealmeida.me">mail@rafaeldealmeida.me</a>
+  </nav>
+
+  <main class="main-container">
+    <header class="header h-100">
+      <nav class="navbar flex-row--aligned">
+        <img class="logo" src="./assets/svg/logo.svg" alt="Logo" />
+        <ul class="navbar__nav ml-auto flex-row--aligned">
+          <li class="nav__item"><a href="#about">About me</a></li>
+          <li class="nav__item"><a href="#portfolio">Projects</a></li>
+          <!-- <li class="nav__item"><a href="#contact">Contact</a></li> -->
+          <!-- <li class="nav__item">
+            <a class="btn--sm btn--secondary">Resume</a>
+          </li> -->
+        </ul>
+      </nav>
+
+      <div class="hero">
+        <p class="hero__text">Hi, my name is</p>
+        <h1 class="hero__title">Rafael Almeida</h1>
+        <h2 class="hero__subtitle">I build things for the web</h2>
+        <p class="hero__text">
+          I'm a front-end engineer based in New York City
+        </p>
+      </div>
+    </header>
+
+    <section id="about" class="about section mh-df">
+      <h3 class="section__title  about__title">About me</h3>
+      <div class="about__body">
+        <div class="about__text">
+          <p>
+            Hello! I'm <span class="text--emphasized">Rafael</span>, I am a software engineer
+            based in <span class="text--emphasized">New York City, NY</span>. I enjoys
+            building things for the web.
+          </p>
+          <p>Here's the technologies I work with:</p>
+          <ul class="about__list">
+            <li class="about__list__item">JavaScript (ES6+)</li>
+            <li class="about__list__item">React</li>
+            <li class="about__list__item">Node.js</li>
+            <li class="about__list__item">Java</li>
+            <li class="about__list__item">Python</li>
+          </ul>
+        </div>
+        <img class="about__img" src="./assets/images/profile.png" alt="Profile image" />
+      </div>
+    </section>
+
+    <section id="portfolio" class="portfolio section">
+      <h3 class="section__title  portfolio__title">Projects</h3>
+    </section>
+
+    <!-- <section id="contact" class="contact section">
+      <h3 class="section__title contact__title">Contact</h3>
+      <form class="contact__form">
+        <label class="form__label" for="name">name</label>
+        <input class="form__input" type="text" id="name" name="name" required>
+
+        <label class="form__label" for="email">email</label>
+        <input class="form__input" type="email" id="email" name="email" required>
+
+        <label class="form__label" for="message">message</label>
+        <textarea class="form__input input--message" id="message" name="message" required> </textarea>
+        <button class="btn--submit btn--primary btn--md" type="submit">send</button>
+      </form>
+    </section> -->
+  </main>
+
+  <footer class="footer fixed-bt">
+    <ul class="footer__nav flex-row--spaced-evenly centered">
+      <li class="nav__item"><a href="#about">About</a></li>
+      <li class="nav__item"><a href="#portfolio">Projects</a></li>
+      <li class="nav__item"><a href="mailto:mail@rafaeldealmeida.me">Contact</a></li>
+      <!-- <li class="nav__item"><a href="">Resume</a></li> -->
+    </ul>
+    <p class="footer__copyrights centered">Rafael Almeida &copy 2019</p>
+  </footer>
+
+  <script src="./js/index.js"></script>
+</body>
+
+</html>

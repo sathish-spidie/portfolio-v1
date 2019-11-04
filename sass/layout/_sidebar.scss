@@ -1,0 +1,26 @@
+.sidebar {
+  display: none;
+  margin-bottom: 9.375rem;
+  letter-spacing: 0.125rem;
+
+  .icon {
+    margin: 1rem auto;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    display: block;
+    width: 0.125rem;
+    height: 6.875rem;
+    margin-top: 2.5rem;
+    transform: translate(-50%, 0);
+    background: $color-primary-dark;
+  }
+
+  @include desktop-up {
+    display: flex;
+  }
+}
