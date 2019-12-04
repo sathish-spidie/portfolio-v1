@@ -5,9 +5,19 @@ const projects = [
     text:
       "A web app built with React for generating palettes of random fonts and colors fetched from the Google Fonts and Colormind REST APIs.",
     skills: ["React", "Express", "REST API"],
-    img: "./assets/images/preview-1.png",
+    img: "./assets/images/palette-preview-1.png",
     src: "https://github.com/ralmeida094/palette",
     demo: "https://ralmeida094-palette.herokuapp.com/"
+  },
+  {
+    tag: "Personal Project",
+    title: "Countries",
+    text:
+      "A web app built with Vanilla JavaScript for displaying info about countries, filtered by region and/or name.",
+    skills: ["JavaScript", "Sass", "REST API"],
+    img: "./assets/images/countries-preview-1.png",
+    src: "https://github.com/ralmeida094/countries",
+    demo: "https://ralmeida094.github.io/countries/"
   }
 ];
 
