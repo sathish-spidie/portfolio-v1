@@ -4,16 +4,18 @@
   }
 
   & > .project ~ .project {
-    margin: 1.125rem auto;
+    margin-top: 5rem;
   }
 
   .project {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     width: 100%;
   }
 
   .project-img {
     display: none;
-    box-shadow: 0px 0px 2px 0px $color-grey-dark;
   }
 
   .project-card {
@@ -25,8 +27,15 @@
       height: 4.375rem;
     }
 
-    &__footer {
-      height: 4.375rem;
+    &__title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    &__tag {
+      font-size: 0.875rem;
     }
 
     &__body {
@@ -36,24 +45,50 @@
       background: $color-primary-dark;
     }
 
-    &__tag {
-      font-size: 0.875rem;
+    &__footer {
+      height: 4.375rem;
     }
 
-    &__title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    &__skills-list {
+    &__skills-list,
+    &__links-list {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
       font-size: 0.875rem;
     }
 
     &__skills-list .list-item,
     &__links-list .list-item {
-      margin: 0.35rem 0 0.35rem 1.55rem;
+      margin: 0.35rem 0.75rem;
+    }
+  }
+
+  .project:nth-child(odd) {
+    .project-card {
+      align-self: flex-start;
+    }
+
+    .project-card__footer {
+      margin-left: -0.75rem;
+    }
+
+    .project-card__skills-list,
+    .project-card__links-list {
+      justify-content: flex-start;
+    }
+  }
+
+  .project:nth-child(even) {
+    .project-img {
+      align-self: flex-start;
+    }
+
+    .project-card {
+      text-align: end;
+    }
+
+    .project-card__footer {
+      margin-right: -0.75rem;
     }
   }
 
@@ -66,6 +101,8 @@
       display: block;
       width: 37.5rem;
       height: 21.875rem;
+      object-fit: contain;
+      border: 1px solid rgb(245, 245, 245);
     }
 
     .project-card {
