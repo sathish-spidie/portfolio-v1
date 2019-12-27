@@ -642,6 +642,28 @@ h6 {
   }
 }
 
+.contact {
+  padding: 5rem;
+  text-align: center;
+}
+
+.contact__title {
+  margin: 1.25rem 0;
+  color: #272623;
+  font-family: Helvetica, sans-serif;
+  font-size: 1.875rem;
+  font-weight: 400;
+}
+
+.contact__text {
+  font-size: 1.25rem;
+}
+
+.contact__link {
+  color: blue;
+  text-decoration: underline;
+}
+
 .header {
   margin: 2rem 0;
 }
@@ -690,26 +712,9 @@ h6 {
   }
 }
 
-.navbar__nav {
-  display: none;
-  margin-left: auto;
-}
-
-@media (min-width: 768px) {
-  .navbar__nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
-.navbar__nav .nav__item {
-  margin: 0 1.25rem;
-}
-
 .sidebar {
   display: none;
-  margin-bottom: 9.375rem;
+  margin-bottom: 6.5rem;
   letter-spacing: 0.125rem;
 }
 
@@ -724,7 +729,7 @@ h6 {
   left: 50%;
   display: block;
   width: 0.125rem;
-  height: 6.875rem;
+  height: 4rem;
   margin-top: 2.5rem;
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
@@ -777,17 +782,25 @@ h6 {
 }
 
 .portfolio > .project ~ .project {
-  margin: 1.125rem auto;
+  margin-top: 5rem;
 }
 
 .portfolio .project {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   width: 100%;
 }
 
 .portfolio .project-img {
   display: none;
-  -webkit-box-shadow: 0px 0px 2px 0px #757473;
-          box-shadow: 0px 0px 2px 0px #757473;
 }
 
 .portfolio .project-card {
@@ -800,8 +813,15 @@ h6 {
   height: 4.375rem;
 }
 
-.portfolio .project-card__footer {
-  height: 4.375rem;
+.portfolio .project-card__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.portfolio .project-card__tag {
+  font-size: 0.875rem;
 }
 
 .portfolio .project-card__body {
@@ -811,24 +831,55 @@ h6 {
   background: #272623;
 }
 
-.portfolio .project-card__tag {
-  font-size: 0.875rem;
+.portfolio .project-card__footer {
+  height: 4.375rem;
 }
 
-.portfolio .project-card__title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.portfolio .project-card__skills-list {
+.portfolio .project-card__skills-list, .portfolio .project-card__links-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   font-size: 0.875rem;
 }
 
 .portfolio .project-card__skills-list .list-item,
 .portfolio .project-card__links-list .list-item {
-  margin: 0.35rem 0 0.35rem 1.55rem;
+  margin: 0.35rem 0.75rem;
+}
+
+.portfolio .project:nth-child(odd) .project-card {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.portfolio .project:nth-child(odd) .project-card__footer {
+  margin-left: -0.75rem;
+}
+
+.portfolio .project:nth-child(odd) .project-card__skills-list,
+.portfolio .project:nth-child(odd) .project-card__links-list {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.portfolio .project:nth-child(even) .project-img {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.portfolio .project:nth-child(even) .project-card {
+  text-align: end;
+}
+
+.portfolio .project:nth-child(even) .project-card__footer {
+  margin-right: -0.75rem;
 }
 
 @media (min-width: 1024px) {
@@ -839,58 +890,49 @@ h6 {
     display: block;
     width: 37.5rem;
     height: 21.875rem;
+    -o-object-fit: contain;
+       object-fit: contain;
+    border: 1px solid whitesmoke;
   }
   .portfolio .project-card {
     margin-top: -7.5rem;
   }
 }
 
-.contact__form {
-  max-width: 37.5rem;
-  margin: auto;
+.contact {
+  padding: 5rem;
+  text-align: center;
 }
 
-.contact .form__input {
-  display: block;
-  width: 100%;
-  height: 2.5em;
-  margin-top: 0.125rem;
-  margin-bottom: 1.25rem;
-  padding: 0.625rem;
-  font-size: 1rem;
-  border: 0.0625rem solid #272623;
+.contact__title {
+  margin: 1.25rem 0;
+  color: #272623;
+  font-family: Helvetica, sans-serif;
+  font-size: 1.875rem;
+  font-weight: 400;
 }
 
-.contact .input--message {
-  height: 15em;
-  resize: none;
+.contact__text {
+  font-size: 1.25rem;
 }
 
-.contact .btn--submit {
-  display: block;
-  margin-left: auto;
-  text-transform: uppercase;
+.contact__link {
+  color: blue;
+  text-decoration: underline;
 }
 
 .footer {
   position: relative;
   width: 100%;
-  height: 7rem;
+  height: 4rem;
   font-size: 0.875rem;
   color: #ebebeb;
   background: #272623;
   overflow: hidden;
 }
 
-.footer__nav {
-  width: 100%;
-  max-width: 25rem;
-  margin-top: -1.25rem;
-}
-
 .footer__copyrights {
   color: #757473;
-  margin-top: 1.25rem;
 }
 
 .icon {
