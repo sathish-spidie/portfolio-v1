@@ -1,13 +1,12 @@
 const projects = [
   {
     tag: "Personal Project",
-    title: "Palette",
-    text:
-      "A web app built with React for generating palettes of random fonts and colors fetched from the Google Fonts and Colormind REST APIs.",
-    skills: ["React", "Express", "REST API"],
-    img: "./assets/images/palette-preview-1.png",
-    src: "https://github.com/ralmeida094/palette",
-    demo: "https://ralmeida094-palette.herokuapp.com/"
+    title: "Bike Rental",
+    text: "An e-commerce web app built with ReactJS.",
+    skills: ["React", "Redux", "Express.js", "REST API"],
+    img: "./assets/images/bike-rental-preview-1.png",
+    src: "https://github.com/ralmeida094/bike-rental",
+    demo: "https://almeida-bike-rental.netlify.com"
   },
   {
     tag: "Personal Project",
@@ -18,74 +17,198 @@ const projects = [
     img: "./assets/images/countries-preview-1.png",
     src: "https://github.com/ralmeida094/countries",
     demo: "https://ralmeida094.github.io/countries/"
+  },
+  {
+    tag: "Personal Project",
+    title: "Palette",
+    text:
+      "A web app built with React for generating palettes of random fonts and colors fetched from the Google Fonts and Colormind REST APIs.",
+    skills: ["React", "Express", "REST API"],
+    img: "./assets/images/palette-preview-1.png",
+    src: "https://github.com/ralmeida094/palette",
+    demo: "https://ralmeida094-palette.herokuapp.com/"
   }
 ];
 
 const portfolio = document.getElementById("portfolio");
 
-const getBodyAlignment = alignment => {
-  return alignment ? "aligned-left" : "aligned-right";
-};
+const createHTMLElement = (tagName, props, children = []) => {
+  const newElement = document.createElement(tagName);
 
-const getContentAlignment = alignment => {
-  return alignment
-    ? "flex-col--aligned-start--evenly"
-    : "flex-col--aligned-end--evenly";
-};
+  Object.keys(props).forEach(p => (newElement[p] = props[p]));
+  children.forEach(child => newElement.appendChild(child));
 
-let leftAligned = true;
+  return newElement;
+};
 
 projects.forEach(project => {
-  let skillsList = "";
-  let newProject;
+  const tag = createHTMLElement("h6", {
+    className: "project-card__tag",
+    innerText: `${project.tag}`
+  });
 
-  project.skills.forEach(
-    skill => (skillsList += `<li class="list-item">${skill}</li> `)
+  const title = createHTMLElement("h4", {
+    className: "project-card__title",
+    innerText: `${project.title}`
+  });
+
+  const cardHeader = createHTMLElement(
+    "div",
+    {
+      className: "project-card__header"
+    },
+    (children = [tag, title])
   );
 
-  let imgSrc = project.img;
+  const description = createHTMLElement("p", {
+    className: "project-card__text",
+    innerText: `${project.text}`
+  });
 
-  newProject = `
-    <div class="project">
-      <div class="project-img ${getBodyAlignment(
-        leftAligned
-      )}" style="background: url(${imgSrc}); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+  const cardBody = createHTMLElement(
+    "div",
+    {
+      className: "project-card__body"
+    },
+    (children = [description])
+  );
 
-      <div class="project-card ${getBodyAlignment(!leftAligned)}">
-        <div class="project-card__header ${getContentAlignment(!leftAligned)}">
-          <h6 class="project-card__tag">${project.tag}</h6>
-          <h4 class="project-card__title">${project.title}</h4>
-        </div>
+  const linkLabelGithub = createHTMLElement("span", {
+    className: "visually-hidden",
+    innerText: "Source Code"
+  });
 
-        <div class="project-card__body">
-          <p class="project-card__text">${project.text}</p>
-        </div>
+  const iconGithub = createHTMLElement("img", {
+    className: "icon icon--md",
+    src: "../assets/svg/github.svg",
+    alt: ""
+  });
 
-        <div class="project-card__footer ${getContentAlignment(!leftAligned)}">
-          <ul class="project-card__skills-list flex-row--justified-end">
-            ${skillsList}
-          </ul>
-          <ul class="project-card__links-list flex-row--justified-end">
-            <li class="list-item">
-              <a class="icon icon--md fab fa-github" href="${
-                project.src
-              }" target="_blank" rel="noreferrer">
-                <span class="visually-hidden">Code</span>
-              </a>
-            </li>
-            <li class="list-item">
-              <a class="icon icon--md fas fa-external-link-alt" href="${
-                project.demo
-              }" target="_blank" rel="noreferrer">
-                <span class="visually-hidden">Demo</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-`;
+  const linkIconSrc = createHTMLElement(
+    "a",
+    {
+      href: `${project.src}`,
+      target: "_blank",
+      rel: "noopener"
+    },
+    (children = [iconGithub, linkLabelGithub])
+  );
 
-  leftAligned = !leftAligned;
-  portfolio.insertAdjacentHTML("beforeend", newProject);
+  const linkLabelDemo = createHTMLElement("span", {
+    className: "visually-hidden",
+    innerText: "Live Demo"
+  });
+
+  const iconDemo = createHTMLElement("img", {
+    className: "icon icon--md",
+    src: "../assets/svg/demo.svg",
+    alt: ""
+  });
+
+  const linkIconDemo = createHTMLElement(
+    "a",
+    {
+      href: `${project.demo}`,
+      target: "_blank",
+      rel: "noopener"
+    },
+    (children = [iconDemo, linkLabelDemo])
+  );
+
+  const listItem1 = createHTMLElement(
+    "li",
+    {
+      className: "list-item"
+    },
+    (children = [linkIconSrc])
+  );
+
+  const listItem2 = createHTMLElement(
+    "li",
+    {
+      className: "list-item"
+    },
+    (children = [linkIconDemo])
+  );
+
+  const linksList = createHTMLElement(
+    "ul",
+    {
+      className: "project-card__links-list"
+    },
+    (children = [listItem1, listItem2])
+  );
+
+  const skillsItemsArray = project.skills.map(skill =>
+    createHTMLElement("li", {
+      className: "list-item",
+      innerText: `${skill}`
+    })
+  );
+  const skillsList = createHTMLElement(
+    "ul",
+    { className: "project-card__skills-list" },
+    (children = skillsItemsArray)
+  );
+
+  const cardFooter = createHTMLElement(
+    "div",
+    { className: "project-card__footer" },
+    (children = [skillsList, linksList])
+  );
+
+  const projectCard = createHTMLElement(
+    "div",
+    { className: "project-card" },
+    (children = [cardHeader, cardBody, cardFooter])
+  );
+
+  const projectPreview = createHTMLElement("img", {
+    className: "project-img",
+    src: `${project.img}`,
+    alt: ""
+  });
+
+  const projectHTML = createHTMLElement(
+    "div",
+    { className: "project" },
+    (children = [projectPreview, projectCard])
+  );
+
+  portfolio.appendChild(projectHTML);
 });
+
+// const projectHTMLTemplate = `
+//     <div class="project">
+//       <div class="project-img" style="background: url(); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+
+//       <div class="project-card">
+//         <div class="project-card__header">
+//           <h6 class="project-card__tag">${project.tag}</h6>
+//           <h4 class="project-card__title">${project.title}</h4>
+//         </div>
+
+//         <div class="project-card__body">
+//           <p class="project-card__text">${project.text}</p>
+//         </div>
+
+//         <div class="project-card__footer">
+//           <ul class="project-card__skills-list">
+//             ${skillsList}
+//           </ul>
+//           <ul class="project-card__links-list">
+//             <li class="list-item">
+//               <a class="icon icon--md fab fa-github" href="${project.src}" target="_blank" rel="noopener">
+//                 <span class="visually-hidden">Code</span>
+//               </a>
+//             </li>
+//             <li class="list-item">
+//               <a class="icon icon--md fas fa-external-link-alt" href="${project.demo}" target="_blank" rel="noopener">
+//                 <span class="visually-hidden">Demo</span>
+//               </a>
+//             </li>
+//           </ul>
+//         </div>
+//       </div>
+//     </div>
+// `;
